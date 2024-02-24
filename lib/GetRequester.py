@@ -5,9 +5,26 @@ class GetRequester:
 
     def __init__(self, url):
         self.url = url
-
+        
+        
     def get_response_body(self):
-        pass
+        URL = 'https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json'
+        response = requests.get(self.url)
+        return response.content
+        
 
     def load_json(self):
-        pass
+        employee_list = []
+        response = json.loads(self.get_response_body())
+        print (response)
+        return response
+        
+        
+        
+
+#api_list = GetRequester('https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json')
+#
+# names = api_list.load_json()
+
+  
+    
